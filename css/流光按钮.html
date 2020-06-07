@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>流光按钮</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #000;
+    }
+
+    a {
+      text-decoration: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(90deg, rgb(155, 212, 41)00, rgb(36, 74, 241), rgb(240, 136, 18), rgb(231, 14, 202), rgb(155, 212, 41));
+      background-size: 400%;
+      width: 400px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-size: 30px;
+      color: #fff;
+      border-radius: 50px;
+      z-index: 1px;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 55px;
+      background: linear-gradient(90deg, rgb(155, 212, 41)00, rgb(36, 74, 241), rgb(240, 136, 18), rgb(231, 14, 202), rgb(155, 212, 41));
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(20px)
+    }
+
+    a:hover {
+      animation: ani 10s linear infinite;
+    }
+
+    a:hover::after {
+      animation: ani 6s linear infinite;
+    }
+
+    @keyframes ani {
+      100% {
+        background-position: -400%, 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="javascript:;">流光按钮</a>
+</body>
+
+</html>
