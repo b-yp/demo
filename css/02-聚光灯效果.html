@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚光灯效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 15px;
+        }
+        body {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+            font-size: 8rem;
+            letter-spacing: 1rem;
+            position: relative;
+        }
+        h1::after {
+            /* content: "CSS聚光灯效果"; */
+            content: attr(data-text);
+            color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-clip-path: ellipse(100px 100px at 0 50%);
+            clip-path: ellipse(100px 100px at 0 50%);
+            animation: ani 5s infinite;
+            background: linear-gradient(120deg, rgb(129, 252, 14), rgb(21, 95, 255), rgb(255, 21, 185), rgb(255, 157, 11));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        @keyframes ani{
+            0% {
+                -webkit-clip-path: ellipse(100px 100px at 0 50%);
+            clip-path: ellipse(100px 100px at 0 50%);
+
+            }
+
+            50% {
+                -webkit-clip-path: ellipse(100px 100px at 100% 50%);
+            clip-path: ellipse(100px 100px at 100% 50%);
+
+            }
+            
+            80% {
+                -webkit-clip-path: ellipse(100px 100px at 0 50%);
+            clip-path: ellipse(100px 100px at 0 50%);
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 data-text="CSS聚光灯效果">CSS聚光灯效果</h1>
+</body>
+</html>
