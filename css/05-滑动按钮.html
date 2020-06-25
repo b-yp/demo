@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动按钮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #293c50;
+        }
+        body nav {
+            width: 480px;
+            height: 40px;
+            background: #30475d;
+            margin: 200px auto 0;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+        }
+        body nav .animation {
+            width: 80px;
+            height: 100%;
+            background: #0aa99b;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 6px;
+            transition: all .5s ease 0s;
+        }
+        body nav a {
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            z-index: 1;
+        }
+        body nav a:nth-child(1) {
+            width: 80px;
+        }
+        nav .start-home, a:nth-child(1):hover~.animation {
+            width: 80px;
+            left: 0;
+        }
+        body nav a:nth-child(2) {
+            width: 120px;
+        }
+        nav .start-category, a:nth-child(2):hover~.animation {
+            width: 120px;
+            left: 80px;
+        }
+        body nav a:nth-child(3) {
+            width: 110px;
+        }
+        nav .start-contact, a:nth-child(3):hover~.animation {
+            width: 110px;
+            left: 200px;
+        }
+        body nav a:nth-child(4) {
+            width: 80px;
+        }
+        nav .start-blog, a:nth-child(4):hover~.animation {
+            width: 80px;
+            left: 310px;
+        }
+        body nav a:nth-child(5) {
+            width: 90px;
+        }
+        nav .start-about, a:nth-child(5):hover~.animation {
+            width: 90px;
+            left: 390px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">home</a>
+        <a href="#">category</a>
+        <a href="#">contact</a>
+        <a href="#">blog</a>
+        <a href="#">about</a>
+        <div class="animation start-home"></div>
+    </nav>
+</body>
+</html>
