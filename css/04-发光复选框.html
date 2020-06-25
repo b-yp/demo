@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发光复选框</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #18191f;
+        }
+        ul {
+            position: relative;
+            display: flex;
+        }
+        ul li {
+            list-style: none;
+        }
+        ul li label {
+            display: relative;
+        }
+        ul li label input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        ul li label .icon {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: #18191f;
+            color: #555;
+            font-size: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: 0 20px;
+            border-radius: 20px;
+            /* overflow: hidden; */
+            box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+                        4px 4px 6px rgba(0, 0, 0, .2),
+                        inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+                        inset 1px 1px 1px rgba(0, 0, 0, .1);
+                        
+        }
+        ul li label .icon::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: calc(100% - 10px);
+            height: calc(50% - 4px);
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            background-color: rgba(255, 255, 255, .05);
+        }
+        ul li label input[type="checkbox"]:checked ~ .icon{
+            box-shadow: inset 0px 0px 2px rgba(255, 255, 255, 0.05),
+                        inset 4px 4px 6px rgba(0, 0, 0, .2);
+        }
+        ul li label input[type="checkbox"]:checked ~ .icon .fa {
+            color: #f81ff0;
+            text-shadow: 0 0 15px #f81ff0,
+                         0 0 25px #f81ff0;
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <label>
+                <input type="checkbox">
+                <div class="icon"><i class="fa fa-gift" aria-hidden="true"></i></div>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <div class="icon"><i class="fa fa-glass" aria-hidden="true"></i></div>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <div class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <div class="icon"><i class="fa fa-heart" aria-hidden="true"></i></div>
+            </label>
+        </li>
+    </ul>
+</body>
+</html>
