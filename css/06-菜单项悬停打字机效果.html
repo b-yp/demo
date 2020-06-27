@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>菜单项悬停打字机效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: consolas;
+    }
+    body {
+      display: flex;      
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #292d3e;
+    }
+
+    ul li {
+      list-style: none;
+      margin: 0 20px;
+      font-size: 50px;
+    }
+    ul li span {
+      position: relative;
+      top: -2px;
+      left: -10px;
+      color: transparent;
+    }
+    ul li:hover span {
+      color: #b92c2c;
+    }
+    ul li a {
+      text-decoration: none;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .1);
+      position: relative;
+    }
+    ul li a::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      color: #7f029a;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    ul:hover li a::before {
+      animation: animate .5s steps(11) forwards;
+    }
+    @keyframes animate {
+      0%{
+        width: 302.406px;
+      }
+      100%{
+        width: 0px;
+      }
+    }
+    ul li:hover a::before {
+      animation: animateTwo 2s steps(11) forwards;
+    }
+    @keyframes animateTwo {
+      0%{
+        width: 0;
+      }
+      100%{
+        width: 302.406px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><span>&times;</span><a href="" data-text="Home">Home</a></li>
+    <li><span>&times;</span><a href="" data-text="About">About</a></li>
+    <li><span>&times;</span><a href="" data-text="Services">Services</a></li>
+    <li><span>&times;</span><a href="" data-text="Typing Menu">Typing Menu</a></li>
+    <li><span>&times;</span><a href="" data-text="Our Team">Our Team</a></li>
+    <li><span>&times;</span><a href="" data-text="Contact Us">Contact Us</a></li>
+  </ul>
+</body>
+</html>
